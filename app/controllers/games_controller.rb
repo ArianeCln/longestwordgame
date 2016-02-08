@@ -11,9 +11,10 @@ class GamesController < ApplicationController
 
   def score
     @end_time = Time.now
-    @translation = translation(params[:attempt])
+    @translation = LongestWord.translation(params[:attempt])
     @time = @end_time - Time.parse(params[:start_time])
-    @process = process_translation(params[:attempt], @time)
+    @process = LongestWord.process_translation(params[:attempt], @time)
+    @score = params[:attempt].length + 1 / @time
   end
 
   # private
