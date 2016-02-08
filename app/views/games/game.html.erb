@@ -1,0 +1,9 @@
+
+<%= @grid %>
+
+<form action="/score">
+  <input type="text" name="attempt">
+  <input type="hidden" value="<%= Time.now %>" name="start_time">
+  <input type="submit" value="Send">
+</form>
+

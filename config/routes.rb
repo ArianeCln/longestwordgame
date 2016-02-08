@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  root 'games#game'
+
+  get 'game' => 'games#game'
+  get 'score' => 'games#score'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
